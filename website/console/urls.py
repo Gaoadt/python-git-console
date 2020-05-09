@@ -20,4 +20,10 @@ from console import views
 
 urlpatterns = [
     path('', views.index),
+    path('dashboard/repositories', views.repos, name="repos"),
+    path('dashboard/start', views.no_repos, name="no_repos"),
+    path('dashboard/new', views.new_repo, name="new_repo"),
+    path('view/<str:name>/', views.view_repo, name="view_repo"),
+    path('view/<str:name>/<str:branch>/', views.view_repo, name="view_repo"),
+    path('view/<str:name>/<str:branch>/<path:inside_path>', views.view_repo, name="view_repo"),
 ] 

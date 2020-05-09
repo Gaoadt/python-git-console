@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+
+{% block title %} {{data.name}}{% endblock %}
+{% block content %}
+
+<h1>
+    {% block repo_title %}
+    {{data.name}}
+    {% endblock %}
+</h1>
+
+<h3>To clone a repo use: {% block repo_clone %}{{data.clone_link}}{% endblock %}</h3>
+<h3>You are on branch {{data.branch}}</h3>
+<h3>Availiable branches:</h3>
+
+{% for item in data.branches %}
+{% if data.path == "" %}
+<li><a href="{% url 'view_repo' data.name item%}">{{item}}</a></li>
+{% else %}
+<li><a href="{% url 'view_repo' data.name item data.path %}">{{item}}</a></li>
+{% endif  %}
+{% endfor %}
+<h3>Contents:</h3>
+
+{% if data.backpath == "" %}
+<li><a href="{% url 'view_repo' data.name data.branch%}">..</a></li>
+{% else %}
+<li><a href="{% url 'view_repo' data.name data.branch data.backpath %}">..</a></li>
+{% endif  %}
+
+{% for item in data.items %}
+<li><a href="{% url 'view_repo' data.name data.branch item.path %}">{{ item.name }}</a></li>
+{% endfor %}
+
+{% endblock %}

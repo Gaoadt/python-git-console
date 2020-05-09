@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+Let's try to create new repo folk
+<form action="{%url 'new_repo'%}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
