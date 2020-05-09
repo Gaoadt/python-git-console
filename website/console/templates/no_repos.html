@@ -1,7 +1,17 @@
 {% extends "main.html" %}
 
 {% block content %}
+<style>
+    body {background-color: black;}
+</style>
 
-You haven't created any repositories yet ;). But it's time to <a href="{% url 'new_repo'  %}">create one</a>)))
-
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <h1>You haven't created any repositories yet. So why not to start?</h1>
+        <ul class="actions">
+            <li><a href="{% url 'new_repo'  %}" class="button alt">Create new repository</a></li>
+        </ul>
+    </div>
+</section>
 {% endblock %}

@@ -12,7 +12,7 @@ def repo_name_validator(name):
     if not RepositoryManager().repoNameVacant(name):
         raise ValidationError("Repo with such name aleady exists")
     if name in forbidden_names:
-        raise ValidationError("Name is reserved for developers purposes. How about developing cheryy_eating_game?")
+        raise ValidationError("Name is reserved for developers purposes. How about developing cheryy_eating_game?g")
 
 class NewRepositoryForm(forms.Form):
     repo_name = forms.CharField(label='Repository name:', validators=[repo_name_validator])
