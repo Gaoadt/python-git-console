@@ -7,6 +7,7 @@ import os, shutil, getpass
 class RepositoryManager:
     server_folder = "git_server"
     server_home = os.path.join(os.path.expanduser("~"), server_folder)
+    
     def makeRepoPath(self, name):
         return os.path.join(self.server_home, name)
     
