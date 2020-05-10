@@ -19,6 +19,7 @@ pip3 install parameterized   # для параметризации юнит те
 ### Чтобы запустить веб - сайт 
 ```shell
 cd website
+python3 manage.py makemigrations console # Только перед первым запуском для бд
 python3 manage.py migrate # Только перед первым запуском для бд
 python3 manage.py runserver
 ```
