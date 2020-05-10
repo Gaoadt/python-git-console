@@ -10,9 +10,11 @@
 
 ## Launching
 Чтобы запустить проект нужно установить следующие пакеты
-* pip3 install Django==3.0.6 - сам Django
-* pip3 install gitpython - библиотека для работы с гитом
-* pip3 install parameterized - для параметризации юнит тестов
+```shell
+pip3 install Django==3.0.6   # сам Django
+pip3 install gitpython       # библтека для работы с гитом
+pip3 install parameterized   # для параметризации юнит тестов
+```
 
 ### Чтобы запустить веб - сайт 
 ```shell
