@@ -1,3 +1,6 @@
+# Unit test temp
+website/temp/*
+website/console/migrations/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
