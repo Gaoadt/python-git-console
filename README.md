@@ -10,22 +10,23 @@
 
 ## Launching
 Чтобы запустить проект нужно установить следующие пакеты
-*pip3 install Django==3.0.6 - сам Django
-*pip3 install gitpython - библиотека для работы с гитом
-*pip3 install parameterized - для параметризации юнит тестов
+* pip3 install Django==3.0.6 - сам Django
+* pip3 install gitpython - библиотека для работы с гитом
+* pip3 install parameterized - для параметризации юнит тестов
 
 ### Чтобы запустить веб - сайт 
-'''shell
+```shell
 cd website
 python3 manage.py runserver
-''''
+```
 И открыть localhost:8000/
 Далее все ясно
 
 ### Чтобы запустить тесты
+```shell
 cd website
 python3 manage.py test
-''''
+```
 
 ### Чтобы было интересно
 Предполагается что на компьютере развернут ssh - сервер. Тогда можно
