@@ -34,10 +34,10 @@ class RepositoryManager:
         repo.save()
                  
 
-    def getRepoData(self, repository, branch, path):
+    def getRepoData(self, repository, branch, path, hostname):
         repo = git.Repo(repository.path)
         data = RepositoryData(repository.name, path,
-            f"git clone {getpass.getuser()}@localhost:{repository.path}",
+            f"git clone {getpass.getuser()}@{hostname}:{repository.path}",
             "", branch)
         
         if branch not in repo.heads:

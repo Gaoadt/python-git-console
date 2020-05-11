@@ -45,8 +45,8 @@ def new_repo(request):
 
 def view_repo(request, name, branch = "master", inside_path=""):
     repo = get_object_or_404(Repository, name=name)
-    data = RepositoryManager().getRepoData(repo, branch, inside_path)
-    
+    hostname = request.get_host().split(":")[0]
+    data = RepositoryManager().getRepoData(repo, branch, inside_path, hostname)
     if data is None:
         return redirect("view_repo", name, branch)
 
