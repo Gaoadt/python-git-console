@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+
+<section id = "main">
+    <div class="inner">
+        <h4>Here is the list of repositories availiable</h4>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% for repo in repo_list %}
+                            <a href="{% url 'view_repo' repo.name %}">{{ repo.name }}</a>
+                            
+                        {% endfor %}</td>
+
+                    </tr>
+                   
+                </tbody>
+
+            </table>
+        </div>
+        Want more? Why not to <a href="{% url 'new_repo'  %}">create new one</a>
+    </div>
+
+</section>
+   
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<section id="one">
+    <div class="inner">
+        <header>
+            <h2>Creating a new repository</h2>
+        </header>
+        <form action="{%url 'new_repo'%}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <ul class="actions">
+            <input type="submit" value="Submit">
+            </ul>
+        </form>        
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{% block title %}Python Git-server Console by Gaoadt{% endblock %}</title>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {% load static %}
+        <link rel="stylesheet" href="{%static "assets/css/main.css"%}" />
+        {% load static %}
+  <script src="{%static "assets/js/jquery.min.js"%}"></script>
+  <script src="{%static "assets/js/skel.min.js"%}"></script>
+  <script src="{%static "assets/js/util.js"%}"></script>
+  <script src="{%static "assets/js/main.js"%}"></script>
+	</head>
+<body>
+    <!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="{%url "repos" %}" class="logo">Python Git Dashboard by Gaoadt</a>
+					<nav id="nav">
+						<a href="{%url "repos" %}">Repositories</a>
+						<a href="{%url "new_repo" %}">Create new repository</a>
+					</nav>
+				</div>
+			</header>
+            <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        
+  {% block content %}<!-- Here will be content of the page -->{% endblock %}
+  
+  
+</body>
+
+</html>

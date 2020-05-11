@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+
+{% block title %} {{data.name}}{% endblock %}
+{% block content %}
+<section id="one">
+    <div class="inner">
+        <header>
+            <h2>{% block repo_title %}
+                {{data.name}}
+                {% endblock %}</h2>
+        </header>
+        <p>You are on branch <b>{{data.branch}}</b>. You can also switch to: </p>
+        <ul class="actions">
+            
+{% for item in data.branches %}
+{% if data.path == "" %}
+<li><a class="button alt" href="{% url 'view_repo' data.name item%}">{{item}}</a></li>
+{% else %}
+<li><a class="button alt" href="{% url 'view_repo' data.name item data.path %}">{{item}}</a></li>
+{% endif  %}
+{% endfor %}
+        </ul>
+    </div>
+    
+
+<div class="inner">
+<pre>
+<code>To clone this repository use: 
+{% block repo_clone %}{{data.clone_link}}{% endblock %}
+</code>
+</pre>
+
+<h4>Contents of current dir</h4>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {% if data.backpath == "" %}
+                            <a href="{% url 'view_repo' data.name data.branch%}">[Back]</a>
+                            {% else %}
+                            <a href="{% url 'view_repo' data.name data.branch data.backpath %}">[Back]</a>
+                            {% endif  %}
+                            
+                        </td>
+                        <td>
+                            reference
+                        </td>
+                    </tr>
+
+                    {% for item in data.items %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'view_repo' data.name data.branch item.path %}">{{ item.name }}</a>
+                            
+                        </td>
+                        <td>
+                            {%if item.isFile%}
+                            file
+                            {%else%}
+                            directory
+                            {%endif%}
+                        </td>
+                    </tr>
+                    {% endfor %}               
+                </tbody>
+
+            </table>
+        </div>
+
+
+
+
+</div>
+</section>
+{% endblock %}
